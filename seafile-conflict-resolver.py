@@ -61,12 +61,18 @@ def print_result(unchanged_files, changed_files):
         for file in unchanged_files:
             print("\t\t - {}".format(file["conflict"]))
 
-
 files = find_conflicts(root_dir)
-calc_checksums(files)
-unchanged_files, changed_files = categorize_files(files)
-print_result(unchanged_files, changed_files)
+unchanged_files = []
 
+# Calculate checksums if there are any conflicted files and print the results.
+if len(files) > 0:
+    calc_checksums(files)
+    unchanged_files, changed_files = categorize_files(files)
+    print_result(unchanged_files, changed_files)
+else:
+    print("No conflicted files found.")
+
+# Ask if the conflicted files (that have the same MD5sum as the original ones) should be deleted
 if len(unchanged_files) > 0:
     should_delete = input("\nDo you want to delete the unchanged conflict files? y/n [n] ")
     if should_delete.lower() == "y":
