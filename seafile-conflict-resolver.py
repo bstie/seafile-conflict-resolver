@@ -6,6 +6,7 @@ root_dir = ""
 if len(sys.argv) > 1:
     root_dir = sys.argv[1]
 else:
+    print("Wrong number of arguments. Expected Path to a Seafile folder.")
     exit()
 
 
