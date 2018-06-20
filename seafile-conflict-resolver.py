@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 import glob, re, hashlib, sys, os
 
 root_dir = ""
