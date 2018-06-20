@@ -6,7 +6,7 @@ From time to time, when using seafile, it happens that conflicts occur. The `sea
 ```bash
 wget https://raw.githubusercontent.com/bstie/seafile-conflict-resolver/master/seafile-conflict-resolver.py
 chmod +x seafile-conflict-resolver.py
-sudo mv seafile-conflict-resolver.py /usr/local/bin
+sudo mv seafile-conflict-resolver.py /usr/local/bin/seafile-conflict-resolver
 ```
 
 ## Usage
@@ -17,7 +17,7 @@ Then execute it with the path to the seafile directory as parameter:
 
 If you installted it to `/usr/local/bin`
 ```bash
-seafile-conflict-resolver.py <path-to-seafile-directory>
+seafile-conflict-resolver <path-to-seafile-directory>
 ```
 
 If you did not install it to `/usr/local/bin`
